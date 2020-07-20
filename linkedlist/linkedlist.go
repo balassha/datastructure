@@ -67,6 +67,7 @@ func (l *linkedList) reverse(){
 	}
 }
 
+// Reverse the contiguous even numbers and reassign to same list (HackerEarth - https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/practice-problems/algorithm/reversed-linked-list-01b722df/)
 func (l *linkedList) restore(){
 	if l == nil {
         return
@@ -103,6 +104,17 @@ func (l *linkedList) restore(){
 		}
 
 		}
+}
+
+func (l *linkedList) delete(n *node){
+	t:=l.head
+	for t!=nil && t.next!=nil{
+		if t.next.data == n.data {
+			t.next = t.next.next
+		}else{
+			t=t.next
+		}
+	}
 }
 
 func main(){
