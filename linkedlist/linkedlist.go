@@ -67,6 +67,18 @@ func (l *linkedList) reverse(){
 	}
 }
 
+func (l *List) HasCycles(){
+	m := make(map[*node]bool) 
+	for c := l.head;c !=nil; c = c.next {
+		if m[c] {
+			fmt.Println("Cycles Detected")
+			return true
+		}
+		m[c] = true
+	}
+	return false
+}
+
 // Reverse the contiguous even numbers and reassign to same list 
 (HackerEarth - https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/practice-problems/algorithm/reversed-linked-list-01b722df/)
 func (l *linkedList) restore(){
